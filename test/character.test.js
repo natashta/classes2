@@ -1,7 +1,7 @@
 import Character from '../src/js/character';
 
 test('Работа метода levelUp', () => {
-  const input = new Character('Name', 10);
+  const hero = new Character('Name', 10);
 
   const expected = {
     name: 'Name',
@@ -11,13 +11,13 @@ test('Работа метода levelUp', () => {
     attack: 48,
   };
 
-  input.levelUp();
-  expect(input).toEqual(expected);
+  hero.levelUp();
+  expect(hero).toEqual(expected);
 });
 
 test('Метод levelUp при health = 0 должен давать ошибку', () => {
-  const input = new Character('Name', 0);
+  const hero = new Character('Name', 0);
 
-  const received = () => input.levelUp();
+  const received = () => hero.levelUp();
   expect(received).toThrow();
 });
